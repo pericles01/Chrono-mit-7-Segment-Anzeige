@@ -1,0 +1,131 @@
+#define A 2
+#define B 3
+#define C 4
+#define D 5
+#define E 6
+#define F 7
+#define G 8
+#define pinTaste 12
+int x=0;
+
+void setup()
+{
+  pinMode(A,1);
+  pinMode(B,1);
+  pinMode(C,1);
+  pinMode(D,1);
+  pinMode(E,1);
+  pinMode(F,1);
+  pinMode(G,1);
+  pinMode(pinTaste,0);
+}
+
+void loop()
+{
+  while(digitalRead(pinTaste)==HIGH)
+  {
+    if(x==10)
+      x=0;
+    	
+    zahlAnzeige(x);
+    delay(100);
+    x=x+1;
+  }
+}
+
+void zahlAnzeige(int zahl)
+{
+  switch(zahl)
+  {
+    case 0:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(E,1);
+	  digitalWrite(F,1);
+	  digitalWrite(G,0);
+    break; 
+    case 1: 
+      digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(A,0);
+	  digitalWrite(D,0);
+	  digitalWrite(E,0);
+	  digitalWrite(F,0);
+	  digitalWrite(G,0);
+    break;
+    case 2:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+ 	  digitalWrite(D,1);
+	  digitalWrite(E,1);
+	  digitalWrite(G,1);
+	  digitalWrite(F,0);
+	  digitalWrite(C,0);
+    break;
+    case 3:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(G,1);
+	  digitalWrite(E,0);
+	  digitalWrite(F,0);
+    break;
+    case 4:
+      digitalWrite(F,1);
+	  digitalWrite(G,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(A,0);
+	  digitalWrite(D,0);
+	  digitalWrite(E,0);
+    break;
+    case 5:
+      digitalWrite(A,1);
+	  digitalWrite(F,1);
+	  digitalWrite(G,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(B,0);
+	  digitalWrite(E ,0);
+    break;
+    case 6:
+      digitalWrite(A,1);
+	  digitalWrite(F,1);
+	  digitalWrite(E,1);
+	  digitalWrite(G,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(B,0);
+    break;
+    case 7:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,0);
+	  digitalWrite(E,0);
+	  digitalWrite(F,0);
+	  digitalWrite(G,0);
+    break;
+    case 8:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(E,1);
+	  digitalWrite(F,1);
+	  digitalWrite(G,1);
+    break;
+    case 9:
+      digitalWrite(A,1);
+	  digitalWrite(B,1);
+	  digitalWrite(C,1);
+	  digitalWrite(D,1);
+	  digitalWrite(E,0);
+	  digitalWrite(F,1);
+	  digitalWrite(G,1);
+    break;
+  }
+}
